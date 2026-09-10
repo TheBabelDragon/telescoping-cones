@@ -5,13 +5,15 @@ identity:
   repo: TheBabelDragon/telescoping-cones
   url: https://github.com/TheBabelDragon/telescoping-cones
   kind: geometric-operator
-  version: "0.1.0"
+  version: "0.2.0"
 purpose: >
   Geometry-first attention operator. Nested cones compress a sensory field
   into state. Geometry is independent of PyTorch / MetaField / Aurora /
   Canonsphere / optical-body backends.
 status: experimental
 entrypoints:
+  - kind: pages
+    path: pages/index.html
   - kind: module
     path: telescoping_cones
   - kind: module
@@ -35,6 +37,7 @@ capabilities:
   - aurora-routing
   - cone-memory
   - stereograph
+  - pages-instrument
 operations:
-  safe: [cone-transform, geometric-attention, adaptive-radius, aurora-routing, cone-memory, stereograph]
+  safe: [cone-transform, geometric-attention, adaptive-radius, aurora-routing, cone-memory, stereograph, pages-instrument]
   mutation: []

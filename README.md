@@ -4,6 +4,8 @@ Geometric attention operator.
 
 Information enters through a wide cross-section, is progressively compressed by nested cones, and exits as a narrow state. Geometry is independent of the neural implementation.
 
+**Live instrument:** [thebabeldragon.github.io/telescoping-cones](https://thebabeldragon.github.io/telescoping-cones/)
+
 ```
 raw field
     │
@@ -17,7 +19,7 @@ Cone 3  state
 memory
 ```
 
-Live lab (interactive Canonsphere + cone attention): this repository is the reusable module. The operator is not a renamed Transformer layer. Geometry actually modifies attention.
+The operator is not a renamed Transformer layer. Geometry actually modifies attention.
 
 ```
 Attention(Q, K, V) = softmax( QKᵀ/√d  +  λ A^cone ) V
@@ -37,6 +39,24 @@ r_{k+1} = r_k · σ(f(X_k))
 ```
 
 Uncertainty opens the next cone. Confidence collapses it.
+
+## Instrument
+
+Vanilla `pages/` lab, same deploy path as Canonsphere.
+
+- Drag to orbit. Shift-drag or AIM to point the cone.
+- SPHERE → STEREOGRAPH morph. A cap of angular radius α becomes a circle of tan(α/2).
+- ATTENTION: click a point. Ribbons are the A^cone row.
+- AURORA only splits regions that deserve compute.
+- MEMORY stores the geometric narrowing, not just the conclusion.
+- OPTICAL: dodecahedral apertures, the optical-body witness.
+
+```
+pages/                 GitHub Pages instrument
+  lab.js               Three.js witness
+  js/index.js          same mathematics as telescoping_cones/
+.github/workflows/pages.yml
+```
 
 ## Install
 
@@ -77,6 +97,7 @@ telescoping_cones/
   protocol.py      cone-state-v0.1
   torch_attention.py   optional nn.Module
 js/                same mathematics for Canonsphere / browser
+pages/             live instrument
 ```
 
 ## Where it plugs in
@@ -94,11 +115,11 @@ optical-body  (physical apertures)
 ```
 
 - **MetaField** owns the canonical cone transform.
-- **Aurora** routes cones as work units. It does not own the operator. Regions that are not interesting are not expanded.
-- **Canonsphere** witnesses. Sphere → stereograph → nested caps. `js/` is the adapter surface.
-- **optical-body-s3** supplies observations: each dodecahedral face is a cone aperture. Hardware produces geometry; the transform collapses it.
+- **Aurora** routes cones as work units. It does not own the operator.
+- **Canonsphere** witnesses. Sphere → stereograph → nested caps.
+- **optical-body-s3** supplies observations: each dodecahedral face is a cone aperture.
 
-Neutral protocol: `cone-state-v0.1` (`protocol.py`). Geometry never depends on a backend.
+Neutral protocol: `cone-state-v0.1`. Geometry never depends on a backend.
 
 ## Tests
 

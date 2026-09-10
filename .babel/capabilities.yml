@@ -22,3 +22,7 @@ stereograph:
   description: Axis-aligned stereographic projection. Caps become concentric circles.
   inputs: [points, axis]
   outputs: [uv]
+pages-instrument:
+  description: Static GitHub Pages lab. Witnesses the operator. Does not own it.
+  inputs: [cone-state-v0.1]
+  outputs: [stereograph, nested-caps, attention-ribbons]

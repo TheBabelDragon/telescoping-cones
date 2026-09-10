@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#07070a" />
+  <meta name="description" content="Telescoping cones — geometric attention operator. Nested cones compress a sensory field into state." />
+  <title>TELESCOPING CONES · TheBabelDragon</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <canvas id="stage"></canvas>
+  <div id="vignette"></div>
+  <div id="scan"></div>
+
+  <header>
+    <p class="kicker">THEBABELDRAGON · METAFIELD</p>
+    <h1>TELESCOPING CONES</h1>
+    <p class="lede">geometric attention operator</p>
+  </header>
+
+  <div id="modes" role="tablist">
+    <button type="button" data-mode="field" class="on">FIELD</button>
+    <button type="button" data-mode="stereo">STEREO</button>
+    <button type="button" data-mode="attention">ATTENTION</button>
+    <button type="button" data-mode="aurora">AURORA</button>
+    <button type="button" data-mode="memory">MEMORY</button>
+    <button type="button" data-mode="optical">OPTICAL</button>
+  </div>
+
+  <aside id="protocol">
+    <h2>CONE-STATE-V0.1</h2>
+    <pre id="card">hydrating</pre>
+    <p class="note">geometry ⊥ neural backend</p>
+  </aside>
+
+  <aside id="layers">
+    <h2>LAYERS</h2>
+    <ol id="layer-list"></ol>
+    <div class="meta" id="layer-meta"></div>
+    <div id="explore">
+      <span>EXPLORE</span>
+      <div class="track"><i id="explore-dot"></i></div>
+      <span>COMPRESS</span>
+    </div>
+  </aside>
+
+  <div id="flow">
+    <span>SPHERE</span>
+    <input id="morph" type="range" min="0" max="1000" value="0" />
+    <span>STEREOGRAPH</span>
+  </div>
+
+  <div id="sliders">
+    <label>APERTURE <input id="aperture" type="range" min="12" max="90" value="38" /></label>
+    <label>DEPTH <input id="depth" type="range" min="2" max="6" value="4" /></label>
+    <label>λ BIAS <input id="lambda" type="range" min="0" max="240" value="80" /></label>
+    <label>TEMP <input id="temperature" type="range" min="20" max="220" value="100" /></label>
+  </div>
+
+  <nav>
+    <button type="button" id="play" class="on">PAUSE</button>
+    <button type="button" id="aim">AIM</button>
+    <button type="button" id="adaptive" class="on">ADAPTIVE</button>
+    <button type="button" id="collapse">COLLAPSE</button>
+    <button type="button" id="reset">RESEED</button>
+  </nav>
+
+  <div id="hint">drag to orbit · shift-drag or AIM to point the cone · click a point to query attention</div>
+
+  <footer>
+    <a href="https://github.com/TheBabelDragon/telescoping-cones">source</a>
+    <span id="status">awaiting field</span>
+  </footer>
+
+  <script type="module" src="lab.js"></script>
+</body>
+</html>
