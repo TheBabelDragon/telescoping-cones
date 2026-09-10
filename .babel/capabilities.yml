@@ -1,0 +1,24 @@
+cone-transform:
+  description: TelescopingCone.contains / weights / collapse over a geometric field
+  inputs: [observations, geometry, center, radius, aperture]
+  outputs: [collapsed-state, entropy, mass]
+geometric-attention:
+  description: Softmax attention with A^cone bias. Geometry modifies the Transformer.
+  inputs: [features, positions, lambda]
+  outputs: [attention-weights, output]
+adaptive-radius:
+  description: r_{k+1} = r_k · σ(f(X_k)). Uncertainty explores; confidence compresses.
+  inputs: [entropy, count]
+  outputs: [shrink]
+aurora-routing:
+  description: Recursively subdivide cones that deserve compute. Aurora owns routing.
+  inputs: [axis, aperture, observations]
+  outputs: [worker-tree]
+cone-memory:
+  description: EMA of collapsed cone state plus geometric traces
+  inputs: [collapsed-state, axis]
+  outputs: [memory-state, traces]
+stereograph:
+  description: Axis-aligned stereographic projection. Caps become concentric circles.
+  inputs: [points, axis]
+  outputs: [uv]

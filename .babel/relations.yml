@@ -1,0 +1,20 @@
+consumes: []
+produces:
+  - cone-state-v0.1
+  - geometric-attention
+compatible_with:
+  - metafield
+  - metafield-engine
+  - metafield-work
+  - canonsphere
+  - throne-room
+  - optical-body-s3
+  - field-os
+  - c3-field-swarm
+  - aurora-coordination
+observes:
+  - canonsphere
+  - optical-body-s3
+depends_on: []
+isolates:
+  - geometry-from-neural-backend

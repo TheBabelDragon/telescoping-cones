@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telescoping-cones"
+version = "0.1.0"
+description = "Geometric attention operator: wide field → nested cone compression → persistent state."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "TheBabelDragon" }]
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+torch = ["torch"]
+test = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+include = ["telescoping_cones*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
